@@ -36,31 +36,31 @@
 
 > List the source node types as a bullet list. For each, one-line reason.
 
-| Source Node Type | Why it is a source |
-| ---------------- | ------------------ |
-| _node type_      | _one-line reason_  |
-| _node type_      | _one-line reason_  |
+| Source Node Type | Why it is a source                                                                 |
+| ---------------- | ---------------------------------------------------------------------------------- |
+| _Start_          | _We always start from here_                                                        |
+| _Relic_          | _We will always get to each one of these and thus we will always depart from them_ |
 
 ### Part 2b: Distance Storage
 
 > Fill in the table. No prose required.
 
-| Property                    | Your answer |
-| --------------------------- | ----------- |
-| Data structure name         |             |
-| What the keys represent     |             |
-| What the values represent   |             |
-| Lookup time complexity      |             |
-| Why O(1) lookup is possible |             |
+| Property                    | Your answer                                    |
+| --------------------------- | ---------------------------------------------- |
+| Data structure name         | _Dictionary_                                   |
+| What the keys represent     | _The nodes_                                    |
+| What the values represent   | _Node cost_                                    |
+| Lookup time complexity      | _O(1)_                                         |
+| Why O(1) lookup is possible | _Dictionary so it find the values immediately_ |
 
 ### Part 2c: Precomputation Complexity
 
 > State the total complexity and show the arithmetic. Two to three lines max.
 
-- **Number of Dijkstra runs:** _your answer_
-- **Cost per run:** _your answer_
-- **Total complexity:** _your answer_
-- **Justification (one line):** _your answer_
+- **Number of Dijkstra runs:** _All our sources so S + M or just M + 1_
+- **Cost per run:** _nlogn, just Dijkstras_
+- **Total complexity:** _All sources * nlogn. So M + 1 * (nlogn)_
+- **Justification (one line):** _We'll run Dijkstras from every source node so its just our source node count \* how long Dijkstras takes to run_
 
 ---
 

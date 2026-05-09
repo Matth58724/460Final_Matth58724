@@ -52,6 +52,7 @@ A single computation would give us 1 possible answer out of the pool of many dif
 # PART 2
 # =============================================================================
 
+# PART 2a
 def select_sources(spawn, relics, exit_node):
     """
     Parameters
@@ -67,9 +68,16 @@ def select_sources(spawn, relics, exit_node):
 
     TODO
     """
-    pass
+    #pass
+    # I hope im not oversimplifying this
+    # We basically just need to make a list of the sources we want
+    return [spawn] + relics
 
 
+
+
+
+# 2b
 def run_dijkstra(graph, source):
     """
     Parameters
@@ -84,11 +92,35 @@ def run_dijkstra(graph, source):
         Minimum cost from source to every node in graph.
         Unreachable nodes map to float('inf').
 
-    TODO
+    #TODO
     """
-    pass
+    #pass
+    # Just Dijkstra's
+
+    # Start everything at infinity
+    distance = {node: float('inf') for node in graph}
+    distance[source] = 0 # Whatever we're on rn
+
+    # Then the minheap which will store the cost and then the node
+    heap = [(0, source)]
+
+    while heap:
+        cost, u = heapq.heappop(heap) # Get the cheapest node
+
+    # If we already have a more effiecient path then we'll skip, it'd also help to properly indent
+        if cost > distance[u]:
+            continue
+
+        # Look at all the nodes adjacent to u and their weights
+        for v, weight in graph[u]:
+            new_cost = distance[u] + weight
+            if new_cost < distance[v]: # If we found a cheaper one
+                distance[v] = new_cost
+                heapq.heappush(heap, (new_cost, v)) # push v back to heap
+    return distance # Final shortest distances for all nodes
 
 
+# 2c
 def precompute_distances(graph, spawn, relics, exit_node):
     """
     Parameters
@@ -104,9 +136,26 @@ def precompute_distances(graph, spawn, relics, exit_node):
         Nested structure supporting dist_table[u][v] lookups
         for every source u your design requires.
 
-    TODO
+    #TODO
     """
-    pass
+    #pass
+
+    distance_table = {}
+
+    # Spawn + all relics
+    sources = select_sources(spawn, relics, exit_node)
+
+    # Run Dijkstras for every source
+    for source in sources:
+        distance_table[source] = run_dijkstra(graph, source)
+
+    return distance_table
+
+
+
+
+
+
 
 
 # =============================================================================

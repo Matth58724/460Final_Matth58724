@@ -1,13 +1,15 @@
 # The Torchbearer
 
-**Student Name:** ___________________________
-**Student ID:** ___________________________
+**Student Name: Matthew Kloth**
+**Student ID: 131379895**
 **Course:** CS 460 – Algorithms | Spring 2026
 
 > This README is your project documentation. Write it the way a developer would document
 > their design decisions , bullet points, brief justifications, and concrete examples where
 > required. You are not writing an essay. You are explaining what you built and why you built
 > it that way. Delete all blockquotes like this one before submitting.
+
+**FYI I use Prettier and it auto formats stuff so sorry if that messes any of the format up**
 
 ---
 
@@ -16,14 +18,15 @@
 > Document why this problem is not just a shortest-path problem. Three bullet points, one
 > per question. Each bullet should be 1-2 sentences max.
 
-- **Why a single shortest-path run from S is not enough:**
-  _Your answer here._
+- **Why a single shortest-path run from S is not enough, name the specific decision it cannot make:**
+  _While it can find a cheapest possible path for each node, it can't put all that info together to find the best order_
+  _What I mean is it can't figure out that while this option may be better right now, it will acutally mess everything up later down the line_
 
 - **What decision remains after all inter-location costs are known:**
-  _Your answer here._
+  _After all that is know we need to figure out our specific order in hitting all the relic rooms, like what I just said above._
 
-- **Why this requires a search over orders (one sentence):**
-  _Your answer here._
+- **Why this requires a search over orders, not a single computation (one sentence):**
+  _A single computation would give us 1 possible answer out of the pool of many different answers._
 
 ---
 
@@ -34,21 +37,21 @@
 > List the source node types as a bullet list. For each, one-line reason.
 
 | Source Node Type | Why it is a source |
-|---|---|
-| _node type_ | _one-line reason_ |
-| _node type_ | _one-line reason_ |
+| ---------------- | ------------------ |
+| _node type_      | _one-line reason_  |
+| _node type_      | _one-line reason_  |
 
 ### Part 2b: Distance Storage
 
 > Fill in the table. No prose required.
 
-| Property | Your answer |
-|---|---|
-| Data structure name | |
-| What the keys represent | |
-| What the values represent | |
-| Lookup time complexity | |
-| Why O(1) lookup is possible | |
+| Property                    | Your answer |
+| --------------------------- | ----------- |
+| Data structure name         |             |
+| What the keys represent     |             |
+| What the values represent   |             |
+| Lookup time complexity      |             |
+| Why O(1) lookup is possible |             |
 
 ### Part 2c: Precomputation Complexity
 
@@ -126,23 +129,23 @@ _Your answer here._
 > Document the three components of your search state as a table.
 > Variable names here must match exactly what you use in torchbearer.py.
 
-| Component | Variable name in code | Data type | Description |
-|---|---|---|---|
-| Current location | | | |
-| Relics already collected | | | |
-| Fuel cost so far | | | |
+| Component                | Variable name in code | Data type | Description |
+| ------------------------ | --------------------- | --------- | ----------- |
+| Current location         |                       |           |             |
+| Relics already collected |                       |           |             |
+| Fuel cost so far         |                       |           |             |
 
 ### Part 5b: Data Structure for Visited Relics
 
 > Fill in the table.
 
-| Property | Your answer |
-|---|---|
-| Data structure chosen | |
+| Property                                    | Your answer      |
+| ------------------------------------------- | ---------------- |
+| Data structure chosen                       |                  |
 | Operation: check if relic already collected | Time complexity: |
-| Operation: mark a relic as collected | Time complexity: |
-| Operation: unmark a relic (backtrack) | Time complexity: |
-| Why this structure fits | |
+| Operation: mark a relic as collected        | Time complexity: |
+| Operation: unmark a relic (backtrack)       | Time complexity: |
+| Why this structure fits                     |                  |
 
 ### Part 5c: Worst-Case Search Space
 

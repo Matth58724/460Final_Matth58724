@@ -2,8 +2,8 @@
 CS 460 – Algorithms: Final Programming Assignment
 The Torchbearer
 
-Student Name: ___________________________
-Student ID:   ___________________________
+Student Name: Matthew Kloth
+Student ID:   131379895
 
 INSTRUCTIONS
 ------------
@@ -26,6 +26,17 @@ import heapq
 
 def explain_problem():
     """
+Why a single shortest-path run from S is not enough, name the specific decision it cannot make:
+While it can find a cheapest possible path for each node, it can't put all that info together to find the best order
+What I mean is it can't figure out that while this option may be better right now, it will acutally mess everything up later down the line
+
+What decision remains after all inter-location costs are known:
+After all that is know we need to figure out our specific order in hitting all the relic rooms, like what I just said above.
+
+Why this requires a search over orders, not a single computation (one sentence):
+A single computation would give us 1 possible answer out of the pool of many different answers.
+
+
     Returns
     -------
     str

@@ -1,7 +1,7 @@
 # Development Log – The Torchbearer
 
-**Student Name:** ___________________________
-**Student ID:** ___________________________
+**Student Name: Matthew Kloth**
+**Student ID: 131379895**
 
 > Instructions: Write at least four dated entries. Required entry types are marked below.
 > Two to five sentences per entry is sufficient. Write entries as you go, not all in one
@@ -10,14 +10,17 @@
 
 ---
 
-## Entry 1 – [Date]: Initial Plan
+## Entry 1 – [5-8-2026]: Initial Plan
 
 > Required. Write this before writing any code. Describe your plan: what you will
 > implement first, what parts you expect to be difficult, and how you plan to test.
 
-_Your entry here._
-
----
+> S is the start and does not move
+> T is the end and also doesn't move
+> M{} is the set of the relic chambers we need to hit
+> I will start from part 1 (obviously) and work on as I go
+> I need to make it so the torchbearer is able to hit all the relic chambers in M with the smallest fuel cost possible
+> I imagine itll be a little annoying to actually find the correct smallest fuel cost instead of one the program thinks is correct
 
 ## Entry 2 – [Date]: [Short description]
 
@@ -47,14 +50,14 @@ _Your entry here._
 
 > Required. Estimate minutes spent per part. Honesty is expected; accuracy is not graded.
 
-| Part | Estimated Hours |
-|---|---|
-| Part 1: Problem Analysis | |
-| Part 2: Precomputation Design | |
-| Part 3: Algorithm Correctness | |
-| Part 4: Search Design | |
-| Part 5: State and Search Space | |
-| Part 6: Pruning | |
-| Part 7: Implementation | |
-| README and DEVLOG writing | |
-| **Total** | |
+| Part                           | Estimated Hours |
+| ------------------------------ | --------------- |
+| Part 1: Problem Analysis       |                 |
+| Part 2: Precomputation Design  |                 |
+| Part 3: Algorithm Correctness  |                 |
+| Part 4: Search Design          |                 |
+| Part 5: State and Search Space |                 |
+| Part 6: Pruning                |                 |
+| Part 7: Implementation         |                 |
+| README and DEVLOG writing      |                 |
+| **Total**                      |                 |

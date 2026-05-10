@@ -259,9 +259,22 @@ def find_optimal_route(dist_table, spawn, relics, exit_node):
         (minimum_fuel_cost, ordered_relic_list)
         Returns (float('inf'), []) if no valid route exists.
 
-    TODO
     """
-    pass
+    # Still pretty simple for now
+    # These 3 are self explanatory, I barely changed the names from explore (I'm a very creative person)
+    current_location = spawn
+    relics_to_visit = set(relics)
+    fuel_cost_sofar = 0
+
+    # We'll start with the cost being infinity and nothing in the order since we haven't found anything yet
+    best = [float('inf'), []]
+
+    # Exploring
+    _explore(dist_table, current_location, relics_to_visit, [], fuel_cost_sofar, exit_node, best)
+    return (best[0], best[1]) # Return the best cost and best order that we can have
+
+
+
 
 
 def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,

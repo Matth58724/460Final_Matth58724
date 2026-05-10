@@ -141,30 +141,32 @@ _Correct routing decisions just means that our path is the best path it can poss
 > Document the three components of your search state as a table.
 > Variable names here must match exactly what you use in torchbearer.py.
 
-| Component                | Variable name in code | Data type | Description |
-| ------------------------ | --------------------- | --------- | ----------- |
-| Current location         |                       |           |             |
-| Relics already collected |                       |           |             |
-| Fuel cost so far         |                       |           |             |
+I kinda stole the name ideas from explore but made them more readable
+
+| Component                | Variable name in code | Data type | Description                                                |
+| ------------------------ | --------------------- | --------- | ---------------------------------------------------------- |
+| Current location         | current_location      | node      | Where the torchbearer is right now                         |
+| Relics already collected | relics_to_visit       | set       | Set of Relics we need to visit still                       |
+| Fuel cost so far         | fuel_cost_sofar       | float     | Total fuel that we've burned to get where we are right now |
 
 ### Part 5b: Data Structure for Visited Relics
 
 > Fill in the table.
 
-| Property                                    | Your answer      |
-| ------------------------------------------- | ---------------- |
-| Data structure chosen                       |                  |
-| Operation: check if relic already collected | Time complexity: |
-| Operation: mark a relic as collected        | Time complexity: |
-| Operation: unmark a relic (backtrack)       | Time complexity: |
-| Why this structure fits                     |                  |
+| Property                                    | Your answer                                                                                        |
+| ------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| Data structure chosen                       | Set                                                                                                |
+| Operation: check if relic already collected | Time complexity: O(1)                                                                              |
+| Operation: mark a relic as collected        | Time complexity: O(1)                                                                              |
+| Operation: unmark a relic (backtrack)       | Time complexity: O(1)                                                                              |
+| Why this structure fits                     | Because anything you do to it is time of O(1) which makes it super fast, like a simpler dictionary |
 
 ### Part 5c: Worst-Case Search Space
 
 > Two bullets.
 
-- **Worst-case number of orders considered:** _Your answer (in terms of k)._
-- **Why:** _One-line justification._
+- **Worst-case number of orders considered:** _k!_
+- **Why:** _Because every new relic we get to multiplies by the previous relics but is also -1 since we've already crossed out the path to get where we are._
 
 ---
 

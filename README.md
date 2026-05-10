@@ -108,17 +108,29 @@ _Correct routing decisions just means that our path is the best path it can poss
 > State the failure mode. Then give a concrete counter-example using specific node names
 > or costs (you may use the illustration example from the spec). Three to five bullets.
 
-- **The failure mode:** _Your answer here._
-- **Counter-example setup:** _Your answer here._
-- **What greedy picks:** _Your answer here._
-- **What optimal picks:** _Your answer here._
-- **Why greedy loses:** _Your answer here._
+- **The failure mode:** _Greedy picks the local best option which can screw everything up later rather than looking at all options available._
+- **Counter-example setup:** _Lets take this table:_
+  |Current | -A- | -B- | -C- | -D- | -E- |
+  | --A--- | --- | -1- | -5- | -5- | 500 |
+  | --B--- | --- | --- | 500 | -1- | -5- |
+  | --C--- | --- | -1- | --- | -1- | 500 |
+  | --D--- | -2- | -1- | -1- | --- | 500 |
+  | --E--- | --- | --- | -2- | --- | --- |
+  This was annoying to format
+
+  Lets say we pick A to start and go: A->B->D->C->E = 503  
+  But this would be cheaper be A->C->D->B->E = 12
+  So greedy cant be optimal
+
+- **What greedy picks:** _A->B_
+- **What optimal picks:** _A->C_
+- **Why greedy loses:** _Looks at the smaller picture rather than the larger picture. Wins the battle but loses the war_
 
 ### What the Algorithm Must Explore
 
 > One bullet. Must use the word "order."
 
-- _Your answer here._
+- _Explore every possible ORDER of combinations._
 
 ---
 

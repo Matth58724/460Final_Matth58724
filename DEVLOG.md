@@ -31,9 +31,12 @@ _Im really poor at preplanning so I'll probably add more stuff that I dont have 
 
 _This isn't that serious but I genuinely got stuck for like 20 min because I didn't indent my if and for loops in run_dijkstra and had absolutely no idea why it wasn't working. God I love Python so much, please take me back to C++ or C#. Again I don't think this is a very serious bug but I wasted so much time I might as well write it here._
 
+> Entry 2.5
+> _The counter example for 4 was kinda difficult to come up with like all counter examples are._
+
 ---
 
-## Entry 3 – [5-9-2026]: [Issue 2]
+## Entry 3 – [5-10-2026]: [Issue 2]
 
 _Your entry here._
 

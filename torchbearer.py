@@ -208,6 +208,30 @@ def explain_search():
         Your Part 4 README answers, written as a string.
         Must match what you wrote in README Part 4.
 
+- **The failure mode:** _Greedy picks the local best option which can screw everything up later rather than looking at all options available._
+- **Counter-example setup:** _Lets take this table:_
+  |Current | -A- | -B- | -C- | -D- | -E- |
+  | --A--- | --- | -1- | -5- | -5- | 500 |
+  | --B--- | --- | --- | 500 | -1- | -5- |
+  | --C--- | --- | -1- | --- | -1- | 500 |
+  | --D--- | -2- | -1- | -1- | --- | 500 |
+  | --E--- | --- | --- | -2- | --- | --- |
+  This was annoying to format
+
+  Lets say we pick A to start and go: A->B->D->C->E = 503  
+  But this would be cheaper be A->C->D->B->E = 12
+  So greedy cant be optimal
+
+- **What greedy picks:** _A->B_
+- **What optimal picks:** _A->C_
+- **Why greedy loses:** _Looks at the smaller picture rather than the larger picture. Wins the battle but loses the war_
+
+
+- _Explore every possible ORDER of combinations._
+
+
+
+
     TODO
     """
     return "TODO"

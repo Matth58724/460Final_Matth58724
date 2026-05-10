@@ -170,6 +170,27 @@ def dijkstra_invariant_check():
         Your Part 3 README answers, written as a string.
         Must match what you wrote in README Part 3.
 
+- **For nodes already finalized (in S):**
+  _True shortest distance since its finalized and won't be looked at again_
+
+- **For nodes not yet finalized (not in S):**
+  _Shortest distance that we've found so far, can still be improved until it becomes finalized_
+
+
+- **Initialization : why the invariant holds before iteration 1:**
+  _S literally can't be anything less than 0 so it holds_
+
+- **Maintenance : why finalizing the min-dist node is always correct:**
+  _Because we will always pull the cheapest option from the min heap_
+
+- **Termination : what the invariant guarantees when the algorithm ends:**
+  _Guarantees that we now have the cheapest route from the source to every node possible_
+
+  
+_Correct routing decisions just means that our path is the best path it can possibly be and if they were wrong then we wouldn't have the best path_
+
+
+
     TODO
     """
     return "TODO"

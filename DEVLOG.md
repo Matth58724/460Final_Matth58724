@@ -33,7 +33,7 @@ _This isn't that serious but I genuinely got stuck for like 20 min because I did
 
 ---
 
-## Entry 3 – [Date]: [Short description]
+## Entry 3 – [5-9-2026]: [Issue 2]
 
 _Your entry here._
 

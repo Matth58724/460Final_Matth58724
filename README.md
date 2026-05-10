@@ -75,29 +75,29 @@
 > Do not copy the invariant text from the spec.
 
 - **For nodes already finalized (in S):**
-  _Your answer here._
+  _True shortest distance since its finalized and won't be looked at again_
 
 - **For nodes not yet finalized (not in S):**
-  _Your answer here._
+  _Shortest distance that we've found so far, can still be improved until it becomes finalized_
 
 ### Part 3b: Why Each Phase Holds
 
 > One to two bullets per phase. Maintenance must mention nonnegative edge weights.
 
 - **Initialization : why the invariant holds before iteration 1:**
-  _Your answer here._
+  _S literally can't be anything less than 0 so it holds_
 
 - **Maintenance : why finalizing the min-dist node is always correct:**
-  _Your answer here._
+  _Because we will always pull the cheapest option from the min heap_
 
 - **Termination : what the invariant guarantees when the algorithm ends:**
-  _Your answer here._
+  _Guarantees that we now have the cheapest route from the source to every node possible_
 
 ### Part 3c: Why This Matters for the Route Planner
 
 > One sentence connecting correct distances to correct routing decisions.
 
-_Your answer here._
+_Correct routing decisions just means that our path is the best path it can possibly be and if they were wrong then we wouldn't have the best path_
 
 ---
 

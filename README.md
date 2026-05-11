@@ -176,23 +176,24 @@ I kinda stole the name ideas from explore but made them more readable
 
 > Three bullets.
 
-- **What is tracked:** _Your answer here._
-- **When it is used:** _Your answer here._
-- **What it allows the algorithm to skip:** _Your answer here._
+- **What is tracked:** _"best" tracks the cheapest cost we've found so far along with its corresponding path to get that cost_
+- **When it is used:** _"best" is used when we need to update it or output the result_
+- **What it allows the algorithm to skip:** _It allows us to skip any unnecessary paths that are already more expensive than the current best so we don't waste compute time_
 
 ### Part 6b: Lower Bound Estimation
 
 > Three bullets.
 
-- **What information is available at the current state:** _Your answer here._
-- **What the lower bound accounts for:** _Your answer here._
-- **Why it never overestimates:** _Your answer here._
+- **What information is available at the current state:** _At any point we know the cost so far and the relics remaining that we have to hit_
+- **What the lower bound accounts for:** _Its the minimum amount of fuel we still need to travel to the remaining relics and then the exit_
+- **Why it never overestimates:** _It wont ever overestimate because it looks at the minimum cost possible for the remaining steps, since it looks at the minimum possible for each step it can only ever be equal to or smaller than the true total cost. It can never be greater._
 
 ### Part 6c: Pruning Correctness
 
 > One to two bullets. Explain why pruning is safe.
 
-- _Your answer here._
+- _I talked about this in 6a but if the lower bound and the cost so far add up to anything more the current "best" then there is no possible way it will ever be better than best, so we should leave it and save resources._
+- _And since the lower bound never overestimates, so if it can't beat the current best then we are gaurenteed to not be able to beat it_
 
 ---
 
@@ -200,4 +201,4 @@ I kinda stole the name ideas from explore but made them more readable
 
 > Bullet list. If none beyond lecture notes, write that.
 
-- _Your references here._
+- _None since you said we can only use lecture materials_

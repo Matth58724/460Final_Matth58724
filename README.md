@@ -4,19 +4,11 @@
 **Student ID: 131379895**
 **Course:** CS 460 – Algorithms | Spring 2026
 
-> This README is your project documentation. Write it the way a developer would document
-> their design decisions , bullet points, brief justifications, and concrete examples where
-> required. You are not writing an essay. You are explaining what you built and why you built
-> it that way. Delete all blockquotes like this one before submitting.
-
 **FYI I use Prettier and it auto formats stuff so sorry if that messes any of the format up**
 
 ---
 
 ## Part 1: Problem Analysis
-
-> Document why this problem is not just a shortest-path problem. Three bullet points, one
-> per question. Each bullet should be 1-2 sentences max.
 
 - **Why a single shortest-path run from S is not enough, name the specific decision it cannot make:**
   _While it can find a cheapest possible path for each node, it can't put all that info together to find the best order_
@@ -34,16 +26,12 @@
 
 ### Part 2a: Source Selection
 
-> List the source node types as a bullet list. For each, one-line reason.
-
 | Source Node Type | Why it is a source                                                                 |
 | ---------------- | ---------------------------------------------------------------------------------- |
 | _Start_          | _We always start from here_                                                        |
 | _Relic_          | _We will always get to each one of these and thus we will always depart from them_ |
 
 ### Part 2b: Distance Storage
-
-> Fill in the table. No prose required.
 
 | Property                    | Your answer                                    |
 | --------------------------- | ---------------------------------------------- |
@@ -55,8 +43,6 @@
 
 ### Part 2c: Precomputation Complexity
 
-> State the total complexity and show the arithmetic. Two to three lines max.
-
 - **Number of Dijkstra runs:** _All our sources so S + M or just M + 1_
 - **Cost per run:** _nlogn, just Dijkstras_
 - **Total complexity:** _All sources * nlogn. So M + 1 * (nlogn)_
@@ -66,13 +52,7 @@
 
 ## Part 3: Algorithm Correctness
 
-> Document your understanding of why Dijkstra produces correct distances.
-> Bullet points and short sentences throughout. No paragraphs.
-
 ### Part 3a: What the Invariant Means
-
-> Two bullets: one for finalized nodes, one for non-finalized nodes.
-> Do not copy the invariant text from the spec.
 
 - **For nodes already finalized (in S):**
   _True shortest distance since its finalized and won't be looked at again_
@@ -81,8 +61,6 @@
   _Shortest distance that we've found so far, can still be improved until it becomes finalized_
 
 ### Part 3b: Why Each Phase Holds
-
-> One to two bullets per phase. Maintenance must mention nonnegative edge weights.
 
 - **Initialization : why the invariant holds before iteration 1:**
   _S literally can't be anything less than 0 so it holds_
@@ -95,8 +73,6 @@
 
 ### Part 3c: Why This Matters for the Route Planner
 
-> One sentence connecting correct distances to correct routing decisions.
-
 _Correct routing decisions just means that our path is the best path it can possibly be and if they were wrong then we wouldn't have the best path_
 
 ---
@@ -104,9 +80,6 @@ _Correct routing decisions just means that our path is the best path it can poss
 ## Part 4: Search Design
 
 ### Why Greedy Fails
-
-> State the failure mode. Then give a concrete counter-example using specific node names
-> or costs (you may use the illustration example from the spec). Three to five bullets.
 
 - **The failure mode:** _Greedy picks the local best option which can screw everything up later rather than looking at all options available._
 - **Counter-example setup:** _Lets take this table:_
@@ -128,8 +101,6 @@ _Correct routing decisions just means that our path is the best path it can poss
 
 ### What the Algorithm Must Explore
 
-> One bullet. Must use the word "order."
-
 - _Explore every possible ORDER of combinations._
 
 ---
@@ -137,9 +108,6 @@ _Correct routing decisions just means that our path is the best path it can poss
 ## Part 5: State and Search Space
 
 ### Part 5a: State Representation
-
-> Document the three components of your search state as a table.
-> Variable names here must match exactly what you use in torchbearer.py.
 
 I kinda stole the name ideas from explore but made them more readable
 
@@ -151,8 +119,6 @@ I kinda stole the name ideas from explore but made them more readable
 
 ### Part 5b: Data Structure for Visited Relics
 
-> Fill in the table.
-
 | Property                                    | Your answer                                                                                        |
 | ------------------------------------------- | -------------------------------------------------------------------------------------------------- |
 | Data structure chosen                       | Set                                                                                                |
@@ -163,8 +129,6 @@ I kinda stole the name ideas from explore but made them more readable
 
 ### Part 5c: Worst-Case Search Space
 
-> Two bullets.
-
 - **Worst-case number of orders considered:** _k!_
 - **Why:** _Because every new relic we get to multiplies by the previous relics but is also -1 since we've already crossed out the path to get where we are._
 
@@ -174,15 +138,11 @@ I kinda stole the name ideas from explore but made them more readable
 
 ### Part 6a: Best-So-Far Tracking
 
-> Three bullets.
-
 - **What is tracked:** _"best" tracks the cheapest cost we've found so far along with its corresponding path to get that cost_
 - **When it is used:** _"best" is used when we need to update it or output the result_
 - **What it allows the algorithm to skip:** _It allows us to skip any unnecessary paths that are already more expensive than the current best so we don't waste compute time_
 
 ### Part 6b: Lower Bound Estimation
-
-> Three bullets.
 
 - **What information is available at the current state:** _At any point we know the cost so far and the relics remaining that we have to hit_
 - **What the lower bound accounts for:** _Its the minimum amount of fuel we still need to travel to the remaining relics and then the exit_
@@ -190,15 +150,11 @@ I kinda stole the name ideas from explore but made them more readable
 
 ### Part 6c: Pruning Correctness
 
-> One to two bullets. Explain why pruning is safe.
-
 - _I talked about this in 6a but if the lower bound and the cost so far add up to anything more the current "best" then there is no possible way it will ever be better than best, so we should leave it and save resources._
 - _And since the lower bound never overestimates, so if it can't beat the current best then we are gaurenteed to not be able to beat it_
 
 ---
 
 ## References
-
-> Bullet list. If none beyond lecture notes, write that.
 
 - _I did talk a little bit about it with a friend to share some thoughts on our approches but besides that nothing since you said we can only use lecture materials_

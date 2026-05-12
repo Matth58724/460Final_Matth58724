@@ -201,4 +201,4 @@ I kinda stole the name ideas from explore but made them more readable
 
 > Bullet list. If none beyond lecture notes, write that.
 
-- _None since you said we can only use lecture materials_
+- _I did talk a little bit about it with a friend to share some thoughts on our approches but besides that nothing since you said we can only use lecture materials_

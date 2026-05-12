@@ -25,27 +25,25 @@ import heapq
 # =============================================================================
 
 def explain_problem():
+
+    explain = ("Why a single shortest-path run from S is not enough, name the specific decision it cannot make: "
+    "While it can find a cheapest possible path for each node, it cant put all that info together to find the best order"
+    "What I mean is it cant figure out that while this option may be better right now, it will acutally mess everything up later down the line"
+    "What decision remains after all inter-location costs are known:"
+    "After all that is know we need to figure out our specific order in hitting all the relic rooms, like what I just said above."
+    "Why this requires a search over orders, not a single computation (one sentence):"
+    "A single computation would give us 1 possible answer out of the pool of many different answers.")
+
+    return explain
+
     """
-Why a single shortest-path run from S is not enough, name the specific decision it cannot make:
-While it can find a cheapest possible path for each node, it can't put all that info together to find the best order
-What I mean is it can't figure out that while this option may be better right now, it will acutally mess everything up later down the line
-
-What decision remains after all inter-location costs are known:
-After all that is know we need to figure out our specific order in hitting all the relic rooms, like what I just said above.
-
-Why this requires a search over orders, not a single computation (one sentence):
-A single computation would give us 1 possible answer out of the pool of many different answers.
-
-
     Returns
     -------
     str
         Your Part 1 README answers, written as a string.
         Must match what you wrote in README Part 1.
 
-    TODO
     """
-    return "TODO"
 
 
 # =============================================================================
@@ -66,9 +64,7 @@ def select_sources(spawn, relics, exit_node):
     list[node]
         No duplicates. Order does not matter.
 
-    TODO
     """
-    #pass
     # I hope im not oversimplifying this
     # We basically just need to make a list of the sources we want
     return [spawn] + relics
@@ -92,9 +88,7 @@ def run_dijkstra(graph, source):
         Minimum cost from source to every node in graph.
         Unreachable nodes map to float('inf').
 
-    #TODO
     """
-    #pass
     # Just Dijkstra's
 
     # Start everything at infinity
@@ -136,9 +130,7 @@ def precompute_distances(graph, spawn, relics, exit_node):
         Nested structure supporting dist_table[u][v] lookups
         for every source u your design requires.
 
-    #TODO
     """
-    #pass
 
     distance_table = {}
 
@@ -169,31 +161,19 @@ def dijkstra_invariant_check():
     str
         Your Part 3 README answers, written as a string.
         Must match what you wrote in README Part 3.
-
-- **For nodes already finalized (in S):**
-  _True shortest distance since its finalized and won't be looked at again_
-
-- **For nodes not yet finalized (not in S):**
-  _Shortest distance that we've found so far, can still be improved until it becomes finalized_
-
-
-- **Initialization : why the invariant holds before iteration 1:**
-  _S literally can't be anything less than 0 so it holds_
-
-- **Maintenance : why finalizing the min-dist node is always correct:**
-  _Because we will always pull the cheapest option from the min heap_
-
-- **Termination : what the invariant guarantees when the algorithm ends:**
-  _Guarantees that we now have the cheapest route from the source to every node possible_
-
-  
-_Correct routing decisions just means that our path is the best path it can possibly be and if they were wrong then we wouldn't have the best path_
-
-
-
-    TODO
     """
-    return "TODO"
+    dijkstra_explain = ("For nodes already finalized (in S): _True shortest distance since its finalized and won't be looked at again_"
+    "**For nodes not yet finalized (not in S):**"
+    "_Shortest distance that we've found so far, can still be improved until it becomes finalized_"
+    "**Initialization : why the invariant holds before iteration 1:**"
+    "_S literally can't be anything less than 0 so it holds_"
+    "**Maintenance : why finalizing the min-dist node is always correct:**"
+    "_Because we will always pull the cheapest option from the min heap_"
+    "**Termination : what the invariant guarantees when the algorithm ends:**"
+    "_Guarantees that we now have the cheapest route from the source to every node possible_"
+    "_Correct routing decisions just means that our path is the best path it can possibly be and if they were wrong then we wouldn't have the best path_")
+
+    return dijkstra_explain
 
 
 # =============================================================================
@@ -207,34 +187,24 @@ def explain_search():
     str
         Your Part 4 README answers, written as a string.
         Must match what you wrote in README Part 4.
-
-- **The failure mode:** _Greedy picks the local best option which can screw everything up later rather than looking at all options available._
-- **Counter-example setup:** _Lets take this table:_
-  |Current | -A- | -B- | -C- | -D- | -E- |
-  | --A--- | --- | -1- | -5- | -5- | 500 |
-  | --B--- | --- | --- | 500 | -1- | -5- |
-  | --C--- | --- | -1- | --- | -1- | 500 |
-  | --D--- | -2- | -1- | -1- | --- | 500 |
-  | --E--- | --- | --- | -2- | --- | --- |
-  This was annoying to format
-
-  Lets say we pick A to start and go: A->B->D->C->E = 503  
-  But this would be cheaper be A->C->D->B->E = 12
-  So greedy cant be optimal
-
-- **What greedy picks:** _A->B_
-- **What optimal picks:** _A->C_
-- **Why greedy loses:** _Looks at the smaller picture rather than the larger picture. Wins the battle but loses the war_
-
-
-- _Explore every possible ORDER of combinations._
-
-
-
-
-    TODO
     """
-    return "TODO"
+    explainSearch = ("**The failure mode:** _Greedy picks the local best option which can screw everything up later rather than looking at all options available._"
+    "**Counter-example setup:** _Lets take this table:_"
+    "|Current | -A- | -B- | -C- | -D- | -E- |"
+    "| --A--- | --- | -1- | -5- | -5- | 500 |"
+    "| --B--- | --- | --- | 500 | -1- | -5- |"
+    "| --C--- | --- | -1- | --- | -1- | 500 |"
+    "| --D--- | -2- | -1- | -1- | --- | 500 |"
+    "| --E--- | --- | --- | -2- | --- | --- |"
+    "This was annoying to format"
+    "Lets say we pick A to start and go: A->B->D->C->E = 503  "
+    "But this would be cheaper be A->C->D->B->E = 12"
+    "So greedy cant be optimal"
+    "**What greedy picks:** _A->B_"
+    "**What optimal picks:** _A->C_"
+    "**Why greedy loses:** _Looks at the smaller picture rather than the larger picture. Wins the battle but loses the war_"
+    "_Explore every possible ORDER of combinations._")
+    return explainSearch
 
 
 # =============================================================================
@@ -299,14 +269,49 @@ def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
     None
         Updates best in place.
 
-    TODO
     Implement: base case, pruning, recursive case, backtracking.
 
     REQUIRED: Add a 1-2 sentence comment near your pruning condition
     explaining why it is safe (cannot skip the optimal solution).
     This comment is graded.
     """
-    pass
+
+
+
+    # Thought process beforehand
+    # We want to stop the recursion when we have no more relics to hit (base case)
+    # We will also prune when we predict the cost will be greater than the current best
+    # Want to do recursion for every new relic that we have to look at
+
+    # Base case
+    if not relics_remaining:
+        final_cost = cost_so_far + dist_table[current_loc][exit_node]
+        if final_cost < best[0]:
+            best[0] = final_cost
+            best[1] = list(relics_visited_order)
+        return
+
+    # Pruning
+    # If the lower bound and the cost so far add up to anything more the current "best" 
+    # then there is no possible way it will ever be better than best, so we should leave it and save resources.
+    # And since the lower bound never overestimates, so if it can't beat the current best then we are gaurenteed to not be able to beat it
+    lower_bound = (min(dist_table[current_loc][r] for r in relics_remaining) + min(dist_table[r][exit_node] for r in relics_remaining))
+    if cost_so_far + lower_bound >= best[0]:
+        return
+
+    # Recursion
+    for relic in list(relics_remaining):
+        cost_to_relic = dist_table[current_loc][relic]
+        
+        relics_remaining.remove(relic)
+        relics_visited_order.append(relic)
+        
+        _explore(dist_table, relic, relics_remaining, relics_visited_order, cost_so_far + cost_to_relic, exit_node, best)
+        
+        # Backtracking, just reverse what we did
+        relics_remaining.add(relic)
+        relics_visited_order.pop()
+    # This all actually wasnt that bad since the README helped me chip away step by step instead of throwing me into the entire algorithm immediately
 
 
 # =============================================================================
@@ -314,6 +319,13 @@ def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
 # =============================================================================
 
 def solve(graph, spawn, relics, exit_node):
+    # Get all distances into the table first
+    dist_table = precompute_distances(graph, spawn, relics, exit_node)
+    
+    # Find the best route with the  distance table
+    return find_optimal_route(dist_table, spawn, relics, exit_node)
+
+
     """
     Parameters
     ----------
@@ -328,9 +340,7 @@ def solve(graph, spawn, relics, exit_node):
         (minimum_fuel_cost, ordered_relic_list)
         Returns (float('inf'), []) if no valid route exists.
 
-    TODO
     """
-    pass
 
 
 # =============================================================================
